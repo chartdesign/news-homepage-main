@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+
+:root {
+  /* primary */
+  --soft-orange: hsl(35, 77%, 60%);
+  --soft-red: hsl(5, 85%, 63%);
+  /* nuetral */
+  --off-white: hsl(36, 100%, 99%);
+  --grayish-blue: hsl(233, 8%, 79%);
+  --Dark-grayish-blue: hsl(236, 13%, 42%);
+  --very-dark-blue: hsl(240, 100%, 5%);
+  /* font weight */
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --fw-extraBold: 800;
+}
+
+/* makes sizing simpler */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* min body height */
+
+body {
+  min-height: 100vh;
+  max-height: min-content;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--off-white);
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+}
+
+p {
+  font-size: 15px;
+  color: var(--Dark-grayish-blue);
+  line-height: 1.5rem;
+  font-weight: var(--fw-regular);
+}
+
+hr {
+  margin: 1.5rem 0;
+  background-color: var(--Dark-grayish-blue);
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+/* utils */
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hidden {
+  display: none;
+}
+/* end utils */
+
+/* page styling */
+
+main {
+  padding: 1rem;
+}
+
+.container {
+  max-width: 1080px;
+  padding: 1px;
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 2fr 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 32px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2.5rem;
+  color: var(--Dark-grayish-blue);
+  text-decoration: none;
+}
+
+.nav-list li:hover {
+  color: var(--soft-red);
+}
+
+.mobile-nav-menu {
+  display: none;
+}
+
+.mobile-nav-links {
+  position: absolute;
+  width: 350px;
+  right: 0;
+  z-index: 1;
+  padding: 1rem;
+  background-color: var(--off-white);
+}
+
+.mobile-nav-links > img {
+  position: relative;
+  left: 290px;
+  margin-top: -1rem;
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-list {
+  line-height: 4rem;
+  font-weight: var(--fw-bold);
+  margin-top: 4rem;
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-nav-menu {
+    display: flex;
+  }
+}
+
+/* hero section */
+.hero {
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0 0 0;
+}
+
+.hero-title {
+  font-weight: var(--fw-extraBold);
+  font-size: 3rem;
+  width: 50%;
+}
+
+.hero-info {
+  padding: 0.5rem;
+  width: 50%;
+}
+
+.hero-content-link {
+  background-color: var(--soft-red);
+  color: var(--off-white);
+  padding: 1rem;
+  width: 50%;
+  border: none;
+  margin-top: 1rem;
+  letter-spacing: 2px;
+}
+
+.hero-content-link:hover {
+  background-color: black;
+  cursor: pointer;
+}
+
+@media (max-width: 680px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-title {
+    width: 100%;
+  }
+
+  .hero-info {
+    width: 100%;
+  }
+}
+
+/* aside section */
+.newArticles {
+  background-color: rgb(31, 31, 31);
+  padding: 1.3rem;
+  line-height: 2rem;
+}
+
+.newArticles > h2 {
+  color: var(--soft-orange);
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+}
+
+.newArticles > h3 {
+  color: var(--off-white);
+  font-weight: var(--fw-bold);
+  margin-top: 2rem;
+}
+
+.newArticles h3:hover {
+  color: var(--soft-orange);
+  cursor: pointer;
+}
+
+.newArticles p {
+  color: var(--grayish-blue);
+  margin-top: 0.8rem;
+}
+
+/* article section */
+.article-content {
+  line-height: 2.5rem;
+  padding: 0 1rem;
+}
+
+.article-img {
+  max-width: 30%;
+}
+
+.article-content > h2 {
+  color: var(--grayish-blue);
+  font-weight: var(--fw-bold);
+  font-size: 2rem;
+}
+
+.article-content > h3 {
+  font-weight: var(--fw-bold);
+}
+
+.article-content h3:hover {
+  color: var(--soft-red);
+  cursor: pointer;
+}
